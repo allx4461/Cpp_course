@@ -9,20 +9,16 @@
 template<typename T>
 class Stack:public DynamicArray<T>{
 public:
-    bool isEmpty() {
-        return this->get_size() == -1;}
+    bool isEmpty() {return this->get_size() == -1;}
   void push(T x);
   T top();
   T pop();
-  void operator/(std::int64_t temp);
-};  
+  void operator/(std::int64_t temp);};  
 template <typename T>
 void Stack<T>::push(T x) {
     if (this->get_size() + 1 >= this->get_capacity()) {
-        throw std::overflow_error("stack is full");
-    }
-    this->push_back(x);
-}
+        throw std::overflow_error("stack is full");}
+    this->push_back(x);}
 template <typename T>
 T Stack<T>::top(){
     if (isEmpty()) {
@@ -41,8 +37,6 @@ void Stack<T>::operator/(std::int64_t temp){//попнуть несколько 
   }
   for (int i=0; i<temp;++i){
     this->pop();
-  }
-}
-
+  }}
 #endif // STACK_H
 //скажите пожалуйста, а почему у вас системный язык на ноутбуке - немецкий?
